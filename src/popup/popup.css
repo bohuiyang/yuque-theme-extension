@@ -1,0 +1,127 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, "Microsoft YaHei", system-ui, sans-serif;
+}
+
+body {
+  background: #f8fafc;
+  margin: 0;
+  width: 320px;
+}
+
+.popup {
+  color: #172033;
+  padding: 16px;
+}
+
+.popup__header {
+  border-bottom: 1px solid #dbe3ef;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0 0 5px;
+}
+
+h2 {
+  color: #475569;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+p {
+  color: #64748b;
+  font-size: 12px;
+  margin: 0;
+}
+
+.switch-row {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding: 12px;
+}
+
+.switch-row strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.switch-row small {
+  color: #64748b;
+  display: block;
+  font-size: 12px;
+}
+
+#enabledToggle {
+  height: 18px;
+  width: 18px;
+}
+
+.theme-list {
+  display: grid;
+  gap: 8px;
+}
+
+.theme-option {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  font-size: 13px;
+  gap: 9px;
+  grid-template-columns: auto auto 1fr;
+  padding: 10px;
+}
+
+.theme-option:has(input:checked) {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.swatch {
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 999px;
+  height: 18px;
+  width: 18px;
+}
+
+.swatch--topaz-light {
+  background: linear-gradient(135deg, #f7f9ff 0%, #5d8be8 100%);
+}
+
+.swatch--topaz-dark {
+  background: linear-gradient(135deg, #101726 0%, #7dd3fc 100%);
+}
+
+.swatch--paper {
+  background: linear-gradient(135deg, #fbfbf8 0%, #9ca3af 100%);
+}
+
+.swatch--dev-docs {
+  background: linear-gradient(135deg, #f8fafc 0%, #10b981 100%);
+}
+
+.reset-button {
+  background: #172033;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font: 13px Inter, "Microsoft YaHei", system-ui, sans-serif;
+  margin-top: 14px;
+  padding: 10px 12px;
+  width: 100%;
+}

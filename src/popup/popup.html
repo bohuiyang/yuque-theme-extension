@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yuque Theme</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup__header">
+        <div>
+          <h1>Yuque Theme</h1>
+          <p id="pageStatus">Checking page...</p>
+        </div>
+      </header>
+
+      <label class="switch-row">
+        <span>
+          <strong>鍚敤鎹㈣偆</strong>
+          <small>瀵规敮鎸佺殑璇泙闃呰椤佃嚜鍔ㄧ敓鏁?/small>
+        </span>
+        <input id="enabledToggle" type="checkbox">
+      </label>
+
+      <section class="theme-list" aria-labelledby="themeTitle">
+        <h2 id="themeTitle">涓婚</h2>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="blue-topaz-light">
+          <span class="swatch swatch--topaz-light"></span>
+          <span>Blue Topaz Light</span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="blue-topaz-dark">
+          <span class="swatch swatch--topaz-dark"></span>
+          <span>Blue Topaz Dark</span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="paper">
+          <span class="swatch swatch--paper"></span>
+          <span>Paper</span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="dev-docs">
+          <span class="swatch swatch--dev-docs"></span>
+          <span>Dev Docs</span>
+        </label>
+      </section>
+
+      <button id="resetButton" class="reset-button" type="button">鎭㈠榛樿</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
