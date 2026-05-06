@@ -41,9 +41,7 @@
       ".lake-content",
       ".yuque-doc-content",
       ".doc-reader",
-      ".ne-viewer-body",
-      "article",
-      "main"
+      ".ne-viewer-body"
     ];
 
     return selectors.map((selector) => document.querySelector(selector)).find(Boolean) || null;

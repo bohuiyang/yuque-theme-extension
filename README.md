@@ -20,7 +20,8 @@ Chrome/Edge Manifest V3 extension for applying Obsidian-inspired themes to Yuque
 
 ## Local Fixture
 
-Open `test-fixtures/yuque-reading-page.html` in a browser to preview the four themes without a Yuque account.
+Open `test-fixtures/yuque-reading-page.html` in a browser for a supported document preview.
+Open `test-fixtures/yuque-non-reading-page.html` for an unsupported page sanity check.
 
 ## Verify
 
@@ -39,7 +40,7 @@ Manual browser checks:
 - Confirm Blue Topaz Light applies automatically.
 - Use the popup to switch to Blue Topaz Dark, Paper, and Dev Docs.
 - Disable theming and confirm the page returns to Yuque styling.
-- Open the fixture and inspect desktop and narrow viewport widths.
+- Open both fixture pages and inspect desktop and narrow viewport widths.
 
 ## Package
 
