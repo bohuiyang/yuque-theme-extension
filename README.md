@@ -7,6 +7,7 @@ Chrome/Edge Manifest V3 extension for applying Obsidian-inspired themes to Yuque
 - Automatically enables theming on supported Yuque reading pages.
 - Defaults to Blue Topaz Light.
 - Includes Blue Topaz Light, Blue Topaz Dark, Paper, and Dev Docs themes.
+- Uses a responsive reading width so long documents expand on wide screens and stay readable on smaller windows.
 - Provides a compact popup for enabling/disabling themes and switching styles.
 - Changes visual styling only; it does not export documents or modify Yuque content.
 
@@ -18,10 +19,16 @@ Chrome/Edge Manifest V3 extension for applying Obsidian-inspired themes to Yuque
 4. Select this repository folder.
 5. Open a Yuque reading page.
 
+After pulling updates or changing local files, click Reload on the extension card in `chrome://extensions`, then refresh the Yuque tab. Chrome does not automatically reload unpacked extension content scripts.
+
 ## Local Fixture
 
 Open `test-fixtures/yuque-reading-page.html` in a browser for a supported document preview.
 Open `test-fixtures/yuque-non-reading-page.html` for an unsupported page sanity check.
+
+## Theme Credit
+
+The Blue Topaz themes are an adapted visual interpretation for Yuque reading pages, inspired by the MIT-licensed Obsidian Blue Topaz theme: https://github.com/PKM-er/Blue-Topaz_Obsidian-css. The extension does not bundle the original Obsidian theme file.
 
 ## Verify
 

@@ -40,6 +40,7 @@
     const selectors = [
       ".lake-content",
       ".yuque-doc-content",
+      ".article-content",
       ".doc-reader",
       ".ne-viewer-body"
     ];

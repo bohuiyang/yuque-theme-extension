@@ -1,49 +1,87 @@
+/*
+ * Blue Topaz-inspired reading themes for Yuque.
+ * Reference theme: https://github.com/PKM-er/Blue-Topaz_Obsidian-css
+ */
 html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] {
   --yte-font-body: "Inter", "LXGW WenKai", "Microsoft YaHei", sans-serif;
   --yte-font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  --yte-reader-max: clamp(760px, 74vw, 1320px);
+  --yte-reader-padding-x: clamp(28px, 4.6vw, 72px);
+  --yte-reader-padding-y: clamp(30px, 4vw, 58px);
+  --yte-radius: 18px;
+  --yte-small-radius: 10px;
   background: var(--yte-page-bg) !important;
 }
 
 html[data-yuque-theme="blue-topaz-light"] {
-  --yte-page-bg: #f7f9ff;
-  --yte-panel-bg: #ffffff;
-  --yte-text: #26324d;
-  --yte-muted: #6b7da4;
-  --yte-heading: #315ca8;
-  --yte-link: #2f73d8;
-  --yte-border: #d9e4fb;
-  --yte-quote-bg: #eaf1ff;
-  --yte-quote-border: #5d8be8;
-  --yte-code-bg: #18243d;
-  --yte-code-text: #d9e6ff;
-  --yte-inline-code-bg: #eaf1ff;
-  --yte-inline-code-text: #264f91;
-  --yte-table-header-bg: #edf4ff;
+  --yte-page-bg: #eaf3ff;
+  --yte-page-bg-soft: #f8fbff;
+  --yte-workspace-bg:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(234, 243, 255, 0.88)),
+    repeating-linear-gradient(0deg, rgba(81, 135, 204, 0.055) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(81, 135, 204, 0.045) 0 1px, transparent 1px 34px),
+    #eaf3ff;
+  --yte-panel-bg: rgba(255, 255, 255, 0.88);
+  --yte-panel-bg-strong: #ffffff;
+  --yte-panel-bg-soft: rgba(240, 247, 255, 0.9);
+  --yte-panel-border: rgba(120, 161, 222, 0.34);
+  --yte-text: #22314d;
+  --yte-muted: #60749b;
+  --yte-heading: #2d65ad;
+  --yte-heading-2: #46a6e9;
+  --yte-link: #2f7de1;
+  --yte-border: rgba(145, 173, 218, 0.42);
+  --yte-quote-bg: rgba(222, 239, 255, 0.78);
+  --yte-quote-border: #65a6f4;
+  --yte-code-bg: #16233c;
+  --yte-code-text: #dceaff;
+  --yte-inline-code-bg: rgba(220, 236, 255, 0.9);
+  --yte-inline-code-text: #245fa9;
+  --yte-table-header-bg: rgba(219, 235, 255, 0.96);
+  --yte-table-row-alt-bg: rgba(246, 250, 255, 0.88);
+  --yte-shadow: 0 22px 70px rgba(75, 111, 171, 0.18);
 }
 
 html[data-yuque-theme="blue-topaz-dark"] {
-  --yte-page-bg: #101726;
-  --yte-panel-bg: #151f33;
-  --yte-text: #d6e3ff;
-  --yte-muted: #8ea4ca;
-  --yte-heading: #93c5fd;
+  --yte-page-bg: #0b1021;
+  --yte-page-bg-soft: #111a31;
+  --yte-workspace-bg:
+    linear-gradient(180deg, rgba(10, 16, 34, 0.95), rgba(12, 20, 40, 0.96)),
+    repeating-linear-gradient(0deg, rgba(123, 194, 255, 0.05) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(123, 194, 255, 0.04) 0 1px, transparent 1px 34px),
+    #0b1021;
+  --yte-panel-bg: rgba(18, 27, 50, 0.94);
+  --yte-panel-bg-strong: #121b33;
+  --yte-panel-bg-soft: rgba(26, 39, 68, 0.92);
+  --yte-panel-border: rgba(118, 163, 222, 0.24);
+  --yte-text: #dbe8ff;
+  --yte-muted: #91a7ca;
+  --yte-heading: #91caff;
+  --yte-heading-2: #63e6be;
   --yte-link: #7dd3fc;
-  --yte-border: #31415f;
-  --yte-quote-bg: #1e2a42;
+  --yte-border: rgba(111, 142, 188, 0.32);
+  --yte-quote-bg: rgba(22, 42, 73, 0.94);
   --yte-quote-border: #7dd3fc;
-  --yte-code-bg: #07111f;
-  --yte-code-text: #d1fae5;
-  --yte-inline-code-bg: #22304a;
-  --yte-inline-code-text: #bfdbfe;
-  --yte-table-header-bg: #1c2942;
+  --yte-code-bg: #070d1d;
+  --yte-code-text: #d7fbe8;
+  --yte-inline-code-bg: rgba(38, 56, 90, 0.95);
+  --yte-inline-code-text: #bfe2ff;
+  --yte-table-header-bg: rgba(28, 44, 78, 0.98);
+  --yte-table-row-alt-bg: rgba(20, 32, 58, 0.86);
+  --yte-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
 }
 
 html[data-yuque-theme="paper"] {
-  --yte-page-bg: #fbfbf8;
-  --yte-panel-bg: #fffefb;
+  --yte-page-bg: #f6f5ef;
+  --yte-workspace-bg: linear-gradient(180deg, #fbfaf5, #f0eee6);
+  --yte-panel-bg: rgba(255, 254, 250, 0.95);
+  --yte-panel-bg-strong: #fffefb;
+  --yte-panel-bg-soft: #f6f3eb;
+  --yte-panel-border: rgba(158, 150, 128, 0.32);
   --yte-text: #202124;
   --yte-muted: #6b7280;
   --yte-heading: #111827;
+  --yte-heading-2: #7c5c2e;
   --yte-link: #2563eb;
   --yte-border: #dedbd2;
   --yte-quote-bg: #f0f0ea;
@@ -53,15 +91,22 @@ html[data-yuque-theme="paper"] {
   --yte-inline-code-bg: #efede7;
   --yte-inline-code-text: #4b5563;
   --yte-table-header-bg: #f2f0e9;
+  --yte-table-row-alt-bg: #fbfaf5;
+  --yte-shadow: 0 18px 54px rgba(74, 68, 54, 0.13);
   --yte-font-body: Georgia, "Times New Roman", "Microsoft YaHei", serif;
 }
 
 html[data-yuque-theme="dev-docs"] {
-  --yte-page-bg: #f8fafc;
-  --yte-panel-bg: #ffffff;
+  --yte-page-bg: #f5f9fc;
+  --yte-workspace-bg: linear-gradient(180deg, #f8fafc, #eef7f6);
+  --yte-panel-bg: rgba(255, 255, 255, 0.94);
+  --yte-panel-bg-strong: #ffffff;
+  --yte-panel-bg-soft: #effaf7;
+  --yte-panel-border: rgba(75, 117, 137, 0.24);
   --yte-text: #14213d;
   --yte-muted: #64748b;
   --yte-heading: #0f766e;
+  --yte-heading-2: #0ea5a3;
   --yte-link: #0f766e;
   --yte-border: #cbd5e1;
   --yte-quote-bg: #ecfdf5;
@@ -71,10 +116,12 @@ html[data-yuque-theme="dev-docs"] {
   --yte-inline-code-bg: #dff7ed;
   --yte-inline-code-text: #065f46;
   --yte-table-header-bg: #e6fffa;
+  --yte-table-row-alt-bg: #f8fffd;
+  --yte-shadow: 0 18px 54px rgba(15, 118, 110, 0.12);
 }
 
 html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] body {
-  background: var(--yte-page-bg) !important;
+  background: var(--yte-workspace-bg, var(--yte-page-bg)) !important;
 }
 
 html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(
@@ -90,101 +137,241 @@ html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(
   [class*="DocReader-module_wrapper"],
   [class*="DocReader-module_content"]
 ) {
-  background: var(--yte-page-bg) !important;
+  background: transparent !important;
+  max-width: none !important;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.ne-viewer-body, .doc-reader, article) {
   color: var(--yte-text) !important;
   font-family: var(--yte-font-body) !important;
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.78;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(h1, h2, h3, h4, h5, h6, ne-h1, ne-h2, ne-h3, ne-h4, ne-h5, ne-h6, ne-heading-content) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader:not(:has(.yuque-doc-content, .lake-content, .article-content)), .ne-viewer-body:not(:has(.yuque-doc-content, .lake-content, .article-content)), article:not(:has(.yuque-doc-content, .lake-content, .article-content))) {
+  background: var(--yte-panel-bg) !important;
+  border: 1px solid var(--yte-panel-border) !important;
+  border-radius: var(--yte-radius);
+  box-shadow: var(--yte-shadow);
+  box-sizing: border-box;
+  color: var(--yte-text) !important;
+  font-family: var(--yte-font-body) !important;
+  font-size: 16px;
+  line-height: 1.82;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: var(--yte-reader-max) !important;
+  min-width: 0;
+  padding: var(--yte-reader-padding-y) var(--yte-reader-padding-x) !important;
+  width: min(100%, var(--yte-reader-max)) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.article-content .yuque-doc-content, .article-content .ne-viewer-body, .yuque-doc-content .ne-viewer-body, .lake-content .ne-viewer-body) {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 !important;
+  max-width: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) > :first-child {
+  margin-top: 0 !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) > :last-child {
+  margin-bottom: 0 !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(h1, h2, h3, h4, h5, h6, ne-h1, ne-h2, ne-h3, ne-h4, ne-h5, ne-h6) {
   color: var(--yte-heading) !important;
+  font-family: var(--yte-font-body) !important;
+  font-weight: 760;
   letter-spacing: 0;
   line-height: 1.35;
+  margin: 1.55em 0 0.72em;
 }
 
 html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(#article-title, .doc-article-title) {
+  box-sizing: border-box;
+  color: var(--yte-heading) !important;
+  font-family: var(--yte-font-body) !important;
+  font-size: clamp(34px, 3.6vw, 54px) !important;
+  font-weight: 800 !important;
+  line-height: 1.22 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: var(--yte-reader-max) !important;
+  padding-left: var(--yte-reader-padding-x) !important;
+  padding-right: var(--yte-reader-padding-x) !important;
+  width: min(100%, var(--yte-reader-max)) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(h1, ne-h1) {
+  color: var(--yte-heading) !important;
+  font-size: clamp(30px, 3.1vw, 48px) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(h2, ne-h2) {
+  border-bottom: 1px solid var(--yte-border);
+  color: var(--yte-heading) !important;
+  font-size: clamp(24px, 2.3vw, 34px) !important;
+  padding-bottom: 0.32em;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(h3, ne-h3) {
+  color: var(--yte-heading-2) !important;
+  font-size: clamp(19px, 1.75vw, 25px) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(ne-h1, ne-h2, ne-h3, ne-h4, ne-h5, ne-h6, ne-quote, ne-table, ne-p) {
+  display: block;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] ne-heading-content {
+  color: inherit !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(ne-h1, ne-h2, ne-h3, ne-h4, ne-h5, ne-h6, ne-heading-content) :is(ne-text, span) {
   color: var(--yte-heading) !important;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(ne-h1, ne-h2, ne-h3, ne-h4, ne-h5, ne-h6, ne-heading-content) :is(ne-text, span) {
-  color: var(--yte-heading) !important;
-}
-
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(p, li, td, th, ne-p, ne-li, ne-td, ne-th, ne-text, .ne-td-content) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(p, li, td, th, ne-p, ne-li, ne-td, ne-th, ne-text, .ne-td-content) {
   color: var(--yte-text) !important;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) a {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(p, ne-p, ul, ol, blockquote, ne-quote) {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(strong, b) {
+  color: var(--yte-heading) !important;
+  font-weight: 760;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) a {
   color: var(--yte-link) !important;
   text-decoration-color: color-mix(in srgb, var(--yte-link) 45%, transparent);
   text-underline-offset: 3px;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(blockquote, ne-quote) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(blockquote, ne-quote) {
   background: var(--yte-quote-bg) !important;
   border-left: 4px solid var(--yte-quote-border) !important;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--yte-small-radius) var(--yte-small-radius) 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
   color: var(--yte-text) !important;
-  margin: 18px 0;
-  padding: 12px 16px;
+  margin: 22px 0;
+  padding: 14px 18px;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(pre, .lake-codeblock, .ne-codeblock, ne-codeblock) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(pre, .lake-codeblock, .ne-codeblock, ne-codeblock) {
   background: var(--yte-code-bg) !important;
-  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--yte-code-text) 16%, transparent);
+  border-radius: var(--yte-small-radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   color: var(--yte-code-text) !important;
   font-family: var(--yte-font-mono) !important;
   line-height: 1.6;
+  margin: 18px 0;
   overflow-x: auto;
-  padding: 14px 16px;
+  padding: 16px 18px;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(code, tt, ne-code):not(pre code) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(pre, .lake-codeblock, .ne-codeblock, ne-codeblock) :is(code, ne-code, span) {
+  background: transparent !important;
+  color: inherit !important;
+  font-family: var(--yte-font-mono) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(code, tt, ne-code):not(pre code) {
   background: var(--yte-inline-code-bg) !important;
-  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--yte-inline-code-text) 14%, transparent);
+  border-radius: 6px;
   color: var(--yte-inline-code-text) !important;
   font-family: var(--yte-font-mono) !important;
-  padding: 0.12em 0.35em;
+  font-size: 0.92em;
+  padding: 0.1em 0.38em;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) table {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(.ne-table, ne-table) {
+  background: var(--yte-panel-bg-strong) !important;
+  border: 1px solid var(--yte-border) !important;
+  border-radius: var(--yte-small-radius);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--yte-text) 7%, transparent);
+  display: block;
+  margin: 22px 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) table {
+  background: var(--yte-panel-bg-strong) !important;
+  border: 1px solid var(--yte-border) !important;
   border-collapse: collapse;
   border-color: var(--yte-border) !important;
+  margin: 22px 0;
   width: 100%;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(.ne-table, ne-table, table) {
-  background: var(--yte-panel-bg) !important;
-}
-
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) :is(th, td) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(th, td, ne-th, ne-td, .ne-td-content) {
   border: 1px solid var(--yte-border) !important;
-  background: var(--yte-panel-bg) !important;
+  background: var(--yte-panel-bg-strong) !important;
   padding: 9px 11px;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) th {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(th, ne-th) {
   background: var(--yte-table-header-bg) !important;
   color: var(--yte-heading) !important;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) hr {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(tr:nth-child(even) td, ne-tr:nth-child(even) ne-td, ne-tr:nth-child(even) .ne-td-content) {
+  background: var(--yte-table-row-alt-bg) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) hr {
   border: 0;
   border-top: 1px solid var(--yte-border);
   margin: 28px 0;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .doc-reader, .ne-viewer-body, article, main) img {
-  border-radius: 8px;
-  margin: 12px 0;
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) img {
+  border-radius: var(--yte-small-radius);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--yte-text) 11%, transparent);
+  margin: 14px 0;
+  max-width: 100%;
 }
 
-html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.toc, .catalog, .outline, aside) {
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader, .ne-viewer-body, article) :is(.toc, .catalog, .outline) {
   color: var(--yte-muted) !important;
+}
+
+html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] ::selection {
+  background: color-mix(in srgb, var(--yte-link) 24%, transparent);
+}
+
+@media (max-width: 1100px) {
+  html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] {
+    --yte-reader-max: calc(100vw - 32px);
+    --yte-reader-padding-x: clamp(18px, 5vw, 34px);
+    --yte-reader-padding-y: 26px;
+    --yte-radius: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] {
+    --yte-reader-max: 100%;
+    --yte-reader-padding-x: 18px;
+    --yte-reader-padding-y: 22px;
+    --yte-radius: 0;
+  }
+
+  html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] :is(.lake-content, .yuque-doc-content, .article-content, .doc-reader:not(:has(.yuque-doc-content, .lake-content, .article-content)), .ne-viewer-body:not(:has(.yuque-doc-content, .lake-content, .article-content)), article:not(:has(.yuque-doc-content, .lake-content, .article-content))) {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    box-shadow: none;
+  }
 }
