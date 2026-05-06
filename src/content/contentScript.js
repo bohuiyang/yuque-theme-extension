@@ -50,8 +50,11 @@
   function hasDocumentSignals(container) {
     if (!container) return false;
 
-    const title = document.querySelector("h1") || container.querySelector("h1, h2");
-    const richBlocks = container.querySelectorAll("p, pre, blockquote, table, ul, ol, h1, h2, h3");
+    const title = Array.from(document.querySelectorAll("h1, h2, ne-h1, ne-h2"))
+      .find((element) => element.textContent.trim().length > 0);
+    const richBlocks = container.querySelectorAll(
+      "p, pre, blockquote, table, ul, ol, h1, h2, h3, ne-p, ne-quote, ne-table, ne-h1, ne-h2, ne-h3"
+    );
 
     return Boolean(title) && richBlocks.length >= 3;
   }
