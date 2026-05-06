@@ -65,51 +65,51 @@
     </div>
     <div class="fixture-shell">
       <main class="lake-content">
-        <h1>椤圭洰澶嶇洏锛氱煡璇嗗簱杩佺Щ</h1>
-        <p>杩欐槸涓€娈垫ā鎷熻闆€闃呰椤电殑姝ｆ枃锛岀敤鏉ラ獙璇佷富棰樻槸鍚﹁鐩栨爣棰樸€佹鏂囥€侀摼鎺ャ€佸紩鐢ㄣ€佷唬鐮佸潡鍜岃〃鏍笺€傝闂?<a href="https://www.yuque.com">璇泙</a> 鏃讹紝鎵╁睍鍙敼鍙樿瑙夊瑙傦紝涓嶆敼鍙樻枃妗ｅ唴瀹广€?/p>
-        <h2>杩佺Щ鐩爣</h2>
+        <h1>Knowledge Base Migration Review</h1>
+        <p>This fixture simulates a Yuque reading page and verifies theme coverage for headings, body text, <a href="https://www.yuque.com">Yuque links</a>, quotes, code, tables, dividers, media, and outline content.</p>
+        <h2>Migration Goals</h2>
         <ul>
-          <li>淇濈暀璇泙鍘熸湁闃呰缁撴瀯銆?/li>
-          <li>璁╅暱鏂囬槄璇绘帴杩?Obsidian Blue Topaz銆?/li>
-          <li>纭繚浠ｇ爜鍧楀拰琛ㄦ牸鍦ㄦ槑鏆椾富棰樹笅閮芥竻鏅般€?/li>
+          <li>Keep the original Yuque reading structure intact.</li>
+          <li>Make long-form reading feel closer to Obsidian Blue Topaz.</li>
+          <li>Ensure code blocks and tables remain readable in light and dark themes.</li>
         </ul>
-        <blockquote>鍏抽敭缁撹搴旇浠庢鏂囬噷璺冲嚭鏉ワ紝浣嗕笉鐮村潖璇泙椤甸潰鍘熸湰鐨勫姛鑳姐€?/blockquote>
-        <p>琛屽唴浠ｇ爜绀轰緥锛?code>data-yuque-theme="blue-topaz-light"</code>銆?/p>
+        <blockquote>Important conclusions should stand out from body text without breaking the page layout or document controls.</blockquote>
+        <p>Inline code example: <code>data-yuque-theme="blue-topaz-light"</code>.</p>
         <pre><code>const settings = {
   enabled: true,
   theme: "blue-topaz-light"
 };</code></pre>
-        <h2>楠屾敹琛ㄦ牸</h2>
+        <h2>Acceptance Table</h2>
         <table>
           <thead>
             <tr>
-              <th>妯″潡</th>
-              <th>鏈熸湜</th>
-              <th>鐘舵€?/th>
+              <th>Area</th>
+              <th>Expected result</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>浠ｇ爜鍧?/td>
-              <td>楂樺姣斻€佸彲妯悜婊氬姩</td>
-              <td>寰呴獙璇?/td>
+              <td>Code block</td>
+              <td>High contrast with horizontal scrolling when needed</td>
+              <td>Ready to verify</td>
             </tr>
             <tr>
-              <td>琛ㄦ牸</td>
-              <td>杈规娓呮櫚銆佹爣棰樼獊鍑?/td>
-              <td>寰呴獙璇?/td>
+              <td>Table</td>
+              <td>Clear borders and distinct header styling</td>
+              <td>Ready to verify</td>
             </tr>
           </tbody>
         </table>
         <hr>
-        <h3>鍥剧墖涓庡獟浣?/h3>
+        <h3>Image And Media</h3>
         <p><img alt="Yuque document preview image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='220' viewBox='0 0 720 220'%3E%3Crect width='720' height='220' fill='%23dbeafe'/%3E%3Ctext x='360' y='118' text-anchor='middle' font-family='Arial' font-size='28' fill='%231e3a8a'%3EYuque Document Image%3C/text%3E%3C/svg%3E"></p>
       </main>
       <aside>
-        <strong>鏂囨。鐩綍</strong>
-        <p>杩佺Щ鐩爣</p>
-        <p>楠屾敹琛ㄦ牸</p>
-        <p>鍥剧墖涓庡獟浣?/p>
+        <strong>Document Outline</strong>
+        <p>Migration Goals</p>
+        <p>Acceptance Table</p>
+        <p>Image And Media</p>
       </aside>
     </div>
     <script>
