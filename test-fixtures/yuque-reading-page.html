@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN" data-yuque-theme-supported="true" data-yuque-theme-enabled="true" data-yuque-theme="blue-topaz-light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yuque Theme Fixture</title>
+    <link rel="stylesheet" href="../src/content/themes.css">
+    <style>
+      body {
+        margin: 0;
+      }
+      .fixture-toolbar {
+        align-items: center;
+        background: #ffffff;
+        border-bottom: 1px solid #dbe3ef;
+        display: flex;
+        gap: 8px;
+        padding: 12px 18px;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+      }
+      .fixture-toolbar button {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        color: #334155;
+        cursor: pointer;
+        font: 13px system-ui, sans-serif;
+        padding: 7px 10px;
+      }
+      .fixture-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 220px;
+        gap: 28px;
+        margin: 0 auto;
+        max-width: 1180px;
+        padding: 36px 20px 80px;
+      }
+      .lake-content {
+        background: transparent;
+      }
+      aside {
+        border-left: 1px solid #dbe3ef;
+        font: 13px system-ui, sans-serif;
+        padding-left: 18px;
+      }
+      @media (max-width: 800px) {
+        .fixture-shell {
+          grid-template-columns: 1fr;
+        }
+        aside {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fixture-toolbar">
+      <button data-theme="blue-topaz-light">Blue Topaz Light</button>
+      <button data-theme="blue-topaz-dark">Blue Topaz Dark</button>
+      <button data-theme="paper">Paper</button>
+      <button data-theme="dev-docs">Dev Docs</button>
+      <button id="toggle">Toggle enabled</button>
+    </div>
+    <div class="fixture-shell">
+      <main class="lake-content">
+        <h1>椤圭洰澶嶇洏锛氱煡璇嗗簱杩佺Щ</h1>
+        <p>杩欐槸涓€娈垫ā鎷熻闆€闃呰椤电殑姝ｆ枃锛岀敤鏉ラ獙璇佷富棰樻槸鍚﹁鐩栨爣棰樸€佹鏂囥€侀摼鎺ャ€佸紩鐢ㄣ€佷唬鐮佸潡鍜岃〃鏍笺€傝闂?<a href="https://www.yuque.com">璇泙</a> 鏃讹紝鎵╁睍鍙敼鍙樿瑙夊瑙傦紝涓嶆敼鍙樻枃妗ｅ唴瀹广€?/p>
+        <h2>杩佺Щ鐩爣</h2>
+        <ul>
+          <li>淇濈暀璇泙鍘熸湁闃呰缁撴瀯銆?/li>
+          <li>璁╅暱鏂囬槄璇绘帴杩?Obsidian Blue Topaz銆?/li>
+          <li>纭繚浠ｇ爜鍧楀拰琛ㄦ牸鍦ㄦ槑鏆椾富棰樹笅閮芥竻鏅般€?/li>
+        </ul>
+        <blockquote>鍏抽敭缁撹搴旇浠庢鏂囬噷璺冲嚭鏉ワ紝浣嗕笉鐮村潖璇泙椤甸潰鍘熸湰鐨勫姛鑳姐€?/blockquote>
+        <p>琛屽唴浠ｇ爜绀轰緥锛?code>data-yuque-theme="blue-topaz-light"</code>銆?/p>
+        <pre><code>const settings = {
+  enabled: true,
+  theme: "blue-topaz-light"
+};</code></pre>
+        <h2>楠屾敹琛ㄦ牸</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>妯″潡</th>
+              <th>鏈熸湜</th>
+              <th>鐘舵€?/th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>浠ｇ爜鍧?/td>
+              <td>楂樺姣斻€佸彲妯悜婊氬姩</td>
+              <td>寰呴獙璇?/td>
+            </tr>
+            <tr>
+              <td>琛ㄦ牸</td>
+              <td>杈规娓呮櫚銆佹爣棰樼獊鍑?/td>
+              <td>寰呴獙璇?/td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <h3>鍥剧墖涓庡獟浣?/h3>
+        <p><img alt="Yuque document preview image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='220' viewBox='0 0 720 220'%3E%3Crect width='720' height='220' fill='%23dbeafe'/%3E%3Ctext x='360' y='118' text-anchor='middle' font-family='Arial' font-size='28' fill='%231e3a8a'%3EYuque Document Image%3C/text%3E%3C/svg%3E"></p>
+      </main>
+      <aside>
+        <strong>鏂囨。鐩綍</strong>
+        <p>杩佺Щ鐩爣</p>
+        <p>楠屾敹琛ㄦ牸</p>
+        <p>鍥剧墖涓庡獟浣?/p>
+      </aside>
+    </div>
+    <script>
+      document.querySelectorAll("[data-theme]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.documentElement.dataset.yuqueTheme = button.dataset.theme;
+        });
+      });
+
+      document.getElementById("toggle").addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.yuqueThemeEnabled = root.dataset.yuqueThemeEnabled === "true" ? "false" : "true";
+      });
+    </script>
+  </body>
+</html>
