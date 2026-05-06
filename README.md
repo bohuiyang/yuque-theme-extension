@@ -43,4 +43,8 @@ Manual browser checks:
 
 ## Package
 
-Zip the repository contents after verification. Do not include `.git`, `.superpowers`, or local screenshots in the customer package.
+Zip only the customer-facing extension files after verification.
+
+Include: `manifest.json`, `src/`, `test-fixtures/`, and `README.md`.
+
+Exclude: `.git`, `.worktrees`, `.superpowers`, `docs/superpowers`, screenshots, and other local artifacts.
