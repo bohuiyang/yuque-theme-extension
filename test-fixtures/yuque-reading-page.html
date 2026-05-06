@@ -29,6 +29,30 @@
         font: 13px system-ui, sans-serif;
         padding: 7px 10px;
       }
+      .fixture-non-document-ui {
+        background: #ffffff;
+        border-bottom: 1px solid #dbe3ef;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        padding: 16px 18px;
+      }
+      .fixture-non-document-ui p,
+      .fixture-non-document-ui ul {
+        margin: 0;
+      }
+      .fixture-non-document-ui table {
+        border-collapse: collapse;
+        font: 12px system-ui, sans-serif;
+      }
+      .fixture-non-document-ui td {
+        border: 1px solid #cbd5e1;
+        padding: 4px 6px;
+      }
+      .fixture-non-document-ui img {
+        height: 48px;
+        width: 96px;
+      }
       .fixture-shell {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 220px;
@@ -63,6 +87,26 @@
       <button data-theme="dev-docs">Dev Docs</button>
       <button id="toggle">Toggle enabled</button>
     </div>
+    <header class="fixture-non-document-ui" aria-label="non-document Global navigation">
+      <section>
+        <strong>Global navigation</strong>
+        <p>Workspace menu text outside the document container should keep normal page UI styling.</p>
+        <a href="https://www.yuque.com/dashboard">Workspace menu link</a>
+        <ul>
+          <li>Recent documents</li>
+          <li>Team settings</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <td>Plan</td>
+              <td>Business</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <img alt="Workspace menu thumbnail" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='96' viewBox='0 0 192 96'%3E%3Crect width='192' height='96' fill='%23e2e8f0'/%3E%3Ctext x='96' y='55' text-anchor='middle' font-family='Arial' font-size='16' fill='%23334155'%3EWorkspace%3C/text%3E%3C/svg%3E">
+    </header>
     <div class="fixture-shell">
       <main class="lake-content">
         <h1>Knowledge Base Migration Review</h1>
