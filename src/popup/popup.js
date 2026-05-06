@@ -14,6 +14,7 @@ const enabledToggle = document.getElementById("enabledToggle");
 const pageStatus = document.getElementById("pageStatus");
 const resetButton = document.getElementById("resetButton");
 const themeInputs = Array.from(document.querySelectorAll('input[name="theme"]'));
+let lastRenderedSettings = { ...DEFAULT_SETTINGS };
 
 function normalizeSettings(input) {
   return {
@@ -27,6 +28,7 @@ function render(settings) {
   themeInputs.forEach((input) => {
     input.checked = input.value === settings.theme;
   });
+  lastRenderedSettings = { ...settings };
 }
 
 function getCurrentTab() {
@@ -50,7 +52,7 @@ async function notifyCurrentTab(settings) {
 async function refreshPageStatus() {
   const tab = await getCurrentTab();
   if (!tab?.id || !tab.url || !tab.url.includes("yuque.com")) {
-    pageStatus.textContent = "褰撳墠椤甸潰鏆備笉鏀寔";
+    pageStatus.textContent = "Current page is not supported";
     return;
   }
 
@@ -58,25 +60,39 @@ async function refreshPageStatus() {
     const response = await chrome.tabs.sendMessage(tab.id, {
       type: "YUQUE_THEME_GET_STATUS"
     });
-    pageStatus.textContent = response?.supported ? "褰撳墠璇泙闃呰椤靛凡鏀寔" : "褰撳墠璇泙椤甸潰鏆傛湭璇嗗埆涓洪槄璇婚〉";
+    pageStatus.textContent = response?.supported ? "Supported Yuque reading page" : "Yuque page is not recognized as a reading page";
   } catch (_error) {
-    pageStatus.textContent = "鍒锋柊璇泙椤甸潰鍚庡彲妫€娴嬬姸鎬?";
+    pageStatus.textContent = "Refresh the Yuque page to check status";
   }
 }
 
 async function saveSettings(nextSettings) {
   const settings = normalizeSettings(nextSettings);
-  await chrome.storage.sync.set(settings);
+  const previousSettings = { ...lastRenderedSettings };
+
+  try {
+    await chrome.storage.sync.set(settings);
+  } catch (_error) {
+    render(previousSettings);
+    pageStatus.textContent = "Unable to save settings";
+    return;
+  }
+
   render(settings);
   await notifyCurrentTab(settings);
   await refreshPageStatus();
 }
 
 async function loadSettings() {
-  const stored = await chrome.storage.sync.get(DEFAULT_SETTINGS);
-  const settings = normalizeSettings(stored);
-  render(settings);
-  await refreshPageStatus();
+  try {
+    const stored = await chrome.storage.sync.get(DEFAULT_SETTINGS);
+    const settings = normalizeSettings(stored);
+    render(settings);
+    await refreshPageStatus();
+  } catch (_error) {
+    render(DEFAULT_SETTINGS);
+    pageStatus.textContent = "Unable to save settings";
+  }
 }
 
 enabledToggle.addEventListener("change", () => {
