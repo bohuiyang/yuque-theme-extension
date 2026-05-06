@@ -1,4 +1,10 @@
 html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] {
+  --yte-font-body: "Inter", "LXGW WenKai", "Microsoft YaHei", sans-serif;
+  --yte-font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  background: var(--yte-page-bg) !important;
+}
+
+html[data-yuque-theme="blue-topaz-light"] {
   --yte-page-bg: #f7f9ff;
   --yte-panel-bg: #ffffff;
   --yte-text: #26324d;
@@ -13,9 +19,6 @@ html[data-yuque-theme-supported="true"][data-yuque-theme-enabled="true"] {
   --yte-inline-code-bg: #eaf1ff;
   --yte-inline-code-text: #264f91;
   --yte-table-header-bg: #edf4ff;
-  --yte-font-body: "Inter", "LXGW WenKai", "Microsoft YaHei", sans-serif;
-  --yte-font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
-  background: var(--yte-page-bg) !important;
 }
 
 html[data-yuque-theme="blue-topaz-dark"] {
